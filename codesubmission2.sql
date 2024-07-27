@@ -1,3 +1,5 @@
+project.dataset.tblRetailers
+
 CREATE TABLE `[project].[dataset].tblRetailers`
 (
 id INT64,
@@ -9,6 +11,9 @@ INSERT INTO `[project].[dataset].tblRetailers`
 VALUES (200,'XYZ Store','2020-01-28 11:36:21 UTC'),
 (300,'ABC Store','2022-05-12 14:27:01 UTC'),
 (400,'QRS Store','2022-05-12 14:27:01 UTC');
+
+
+project.dataset.tblRedemptions-ByDay
 
 CREATE TABLE `[project].[dataset].tblRedemptions-ByDay`
 (
@@ -58,4 +63,48 @@ redemption date, for the date range 2023-10-30 to 2023-11-05, for retailer "ABC 
 In words, describe how you would do this (no need to write a query, unless you’d like to).
 
 
+answers1
 
+select
+redemptionDate,
+redemptionCount
+from project.dataset.tblRedemptions-ByDay
+order by redemptionCount asc limit 1
+
+----
+
+answer2
+
+select
+redemptionDate,
+redemptionCount
+from project.dataset.tblRedemptions-ByDay
+order by redemptionCount desc limit 1
+
+----
+
+answer3
+
+select
+createDateTime
+from
+(
+	select
+redemptionDate,
+redemptionCount
+from project.dataset.tblRedemptions-ByDay
+order by redemptionCount asc limit 1
+
+) as f
+
+select
+createDateTime
+from
+(
+	select
+redemptionDate,
+redemptionCount
+from project.dataset.tblRedemptions-ByDay
+order by redemptionCount desc limit 1
+
+) as g
