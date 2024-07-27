@@ -119,3 +119,6 @@ answer4
 and select redemptionDate, redemptionCount and createDateTime by filtering on redemptionDate with a where condition 
 between 2023-10-30 to 2023-11-05,
 and order the redemptionCount by createDateTime by asc and limit 1,
+
+
+:)
