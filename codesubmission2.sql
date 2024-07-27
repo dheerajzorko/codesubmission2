@@ -91,7 +91,8 @@ from
 (
 	select
 redemptionDate,
-redemptionCount
+redemptionCount,
+createDateTime
 from project.dataset.tblRedemptions-ByDay
 order by redemptionCount asc limit 1
 
@@ -103,7 +104,8 @@ from
 (
 	select
 redemptionDate,
-redemptionCount
+redemptionCount,
+createDateTime
 from project.dataset.tblRedemptions-ByDay
 order by redemptionCount desc limit 1
 
