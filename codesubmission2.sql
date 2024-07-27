@@ -110,3 +110,12 @@ from project.dataset.tblRedemptions-ByDay
 order by redemptionCount desc limit 1
 
 ) as g
+
+
+----
+answer4
+
+-> i can join tblRetailers with tblRedemptions-ByDay on tblRetailers.id = tblRedemptions-ByDay.retailerId where tblRetailers.retailerName is "ABC Store"
+and select redemptionDate, redemptionCount and createDateTime by filtering on redemptionDate with a where condition 
+between 2023-10-30 to 2023-11-05,
+and order the redemptionCount by createDateTime by asc and limit 1,
